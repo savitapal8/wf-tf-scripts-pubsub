@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_kms_crypto_key" "secrets" {
- name     = "my-dev-appid-strg-demopb1-key"
+ name     = "my-dev-appid-strg-demopb12-key"
  key_ring = "projects/airline1-sabre-wolverine/locations/us/keyRings/savita-keyring-us"
 
  labels = {
