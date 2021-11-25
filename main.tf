@@ -32,7 +32,7 @@ resource "google_kms_crypto_key_iam_member" "encryption" {
 
 resource "google_pubsub_topic" "pb_topic" {
  project      = data.google_project.project.project_id
- name         = "my-dev-appid-strg-demopb1-topic"
+ name         = "dev-appid-strg-demopb1-topic"
  labels = {
     owner = "hybridenv"
     application_division = "pci"
@@ -46,7 +46,7 @@ resource "google_pubsub_topic" "pb_topic" {
  kms_key_name = google_kms_crypto_key.secrets.id
  message_storage_policy {
     allowed_persistence_regions = [
-      "us-central1",
+      "europe-west1",
     ]
   }
 }
