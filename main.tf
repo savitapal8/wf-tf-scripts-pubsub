@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_kms_crypto_key" "secrets" {
- name     = "my-dev-appid-strg-demopb12-key"
+ name     = "my-dev-appid-strg-demopb13-key"
  key_ring = "projects/airline1-sabre-wolverine/locations/us/keyRings/savita-keyring-us"
 
  labels = {
@@ -32,7 +32,7 @@ resource "google_kms_crypto_key_iam_member" "encryption" {
 
 resource "google_pubsub_topic" "pb_topic" {
  project      = data.google_project.project.project_id
- name         = "dev-appid-strg-demopb1-topic"
+ name         = "dev-appid-strg-demopb13-topic"
  labels = {
     owner = "hybridenv"
     application_division = "pci"
@@ -60,7 +60,7 @@ resource "google_pubsub_topic_iam_member" "member" {
 
 resource "google_pubsub_subscription" "subsc" {
  project      = "airline1-sabre-wolverine"
- name         = "my-dev-appid-strg-demopb1-subsc"
+ name         = "my-dev-appid-strg-demopb13-subsc"
  topic = google_pubsub_topic.pb_topic.name
  labels = {
     owner = "hybridenv"
