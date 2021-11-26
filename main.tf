@@ -46,7 +46,7 @@ resource "google_pubsub_topic" "pb_topic" {
  kms_key_name = google_kms_crypto_key.secrets.id
  message_storage_policy {
     allowed_persistence_regions = [
-      "europe-west1",
+      "us-central1",
     ]
   }
 }
